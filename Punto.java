@@ -1,22 +1,22 @@
 import java.text.DecimalFormat;
 
 public class Punto {
-    public double x;
-    public double y;
+    public float x;
+    public float y;
 
-    public Punto(double x, double y) {
+    public Punto(float x, float y) {
         this.x = x;
         this.y = y;
     }
 
-    public double[] coordCartesianas() {
-        return new double[]{x, y};
+    public float[] coordCartesianas() {
+        return new float[]{x, y};
     }
 
-    public double[] coordPolares() {
-        double r = Math.sqrt(x * x + y * y);
-        double theta = Math.toDegrees(Math.atan2(y, x));
-        return new double[]{r, theta};
+    public float[] coordPolares() {
+        float r = Math.sqrt(x * x + y * y);
+        float theta = Math.toDegrees(Math.atan2(y, x));
+        return new float[]{r, theta};
     }
 
     @Override
@@ -28,10 +28,10 @@ public class Punto {
         Punto p = new Punto(7, 9);
         System.out.println(p);
 
-        double[] cartesianas = p.coordCartesianas();
+        float[] cartesianas = p.coordCartesianas();
         System.out.println("Cartesianas: (" + cartesianas[0] + ", " + cartesianas[1] + ")");
 
-        double[] polares = p.coordPolares();
+        float[] polares = p.coordPolares();
         DecimalFormat df = new DecimalFormat("#.##");
         System.out.println("Polares: (r=" + df.format(polares[0]) + ", theta=" + df.format(polares[1]) + "°)");
     }
