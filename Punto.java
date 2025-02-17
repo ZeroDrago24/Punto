@@ -9,11 +9,11 @@ public class Punto {
         this.y = y;
     }
 
-    public float[] coordCartesianas() {
+    public float[] coord_Cartesianas() {
         return new float[]{x, y};
     }
 
-    public float[] coordPolares() {
+    public float[] coord_polares() {
         float r = Math.sqrt(x * x + y * y);
         float theta = Math.toDegrees(Math.atan2(y, x));
         return new float[]{r, theta};
@@ -28,10 +28,10 @@ public class Punto {
         Punto p = new Punto(7, 9);
         System.out.println(p);
 
-        float[] cartesianas = p.coordCartesianas();
+        float[] cartesianas = p.coord_Cartesianas();
         System.out.println("Cartesianas: (" + cartesianas[0] + ", " + cartesianas[1] + ")");
 
-        float[] polares = p.coordPolares();
+        float[] polares = p.coord_polares();
         DecimalFormat df = new DecimalFormat("#.##");
         System.out.println("Polares: (r=" + df.format(polares[0]) + ", theta=" + df.format(polares[1]) + "°)");
     }
